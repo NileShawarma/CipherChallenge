@@ -59,19 +59,22 @@ def decrypt(cipherType,cipherInput):
     global decrypted_text_win 
     global decryptionWindowOpen
     global cipherText 
+
     cipherText = cipherInput.get("1.0","end")
+    
     try:
         if not decryptionWindowOpen:
             decrypted_text_win = open_new_window(title=cipherType)
     except: 
         decrypted_text_win = open_new_window(title=cipherType)
         tk.Label(decrypted_text_win, text="Plaintext:", font=("Arial", 14), name="plainTextTitle").pack(pady=10)
-        tk.Text(decrypted_text_win, font=("Arial", 12, "bold"), fg="blue", name="plainTextContent").pack(fill="both", expand=True,pady=20)
+        tk.Text(decrypted_text_win, font=("Times New Roman", 12, "bold"), fg="blue", name="plainTextContent").pack(fill="both", expand=True,pady=20)
         
         scrollbar = tk.Scrollbar(decrypted_text_win, command=decrypted_text_win.nametowidget("plainTextContent").yview)
         scrollbar.pack(side="right", fill="y")
 
         decrypted_text_win.nametowidget("plainTextContent").config(yscrollcommand=scrollbar.set)
+    
     decryptionWindowOpen = True
 
     decrypted_text_win.bind("WM_DELETE_WINDOW", lambda : globals().update({"decryptionWindowOpen",False}))
@@ -83,7 +86,6 @@ def decrypt(cipherType,cipherInput):
             for index, plainLetter in enumerate(string.ascii_lowercase): #Generate substitution key
                 cipherLetter = SubstitutionPageData["KeyData"][0][index].get() 
                 if cipherLetter.isalpha():
-                    print(f"'{cipherLetter}' = {plainLetter}")
                     subsitution_keys[cipherLetter] = plainLetter
             
             unusedLetters = list(string.ascii_uppercase)
@@ -91,10 +93,10 @@ def decrypt(cipherType,cipherInput):
                 unusedLetters.remove(letter)
             unusedLetters = ", ".join(unusedLetters)
 
-            table_frame.nametowidget("unusedLetters")["text"]="Unused letters: " + unusedLetters
-            print(unusedLetters)
+            table_frame.nametowidget("unusedLetters")["text"] = "Unused letters: " + unusedLetters
+
             cipherText = list(cipherText)
-            print(cipherText)
+
             for index,letter in enumerate(cipherText): #Decrypt
                 if letter in subsitution_keys.keys():
                     cipherText[index] = subsitution_keys[letter]
