@@ -1,13 +1,31 @@
 from collections import Counter
 
-string = "ELUOP PAIJO NPAVX VHLDQ ZCDUY LZVJK WTDVL VGZZE LLWKU AYMLF KUSSK PLOJZ EXHPK LZYGH VLHZD MSMXX PEXFV UHPPP ARAXP YQHXF INPJF EEHZT BHQJI QYQAE ZNQZT SEJIP XWZXS BEPDL MDYMP EYEEF LOLUE JIYJI YXFCE DMYIL HTRVV VLMLP DHLQY SEGOA VHLEA YIVHF JTSYX YHZLY SFYWW MKELC NOVHB AGLYG KILUN TLUCK MOAMO XFYPH BLFFI TEKHV WNYTM OXXIP CCAGA JCLMS GSYGL PASFI OWTPX KYHOV HLLUP OZLLW ELQWA HWPTC BUSUL LXTHH OISOV HXKLP OVBXG HZOMD RAAYT AVPUM TEMUI ZNELP AIJUH LMISL SWPSP PQFSR QOAGH SEWII JUJPP AXSBE OVHSD MZCIL RJIYT OUMNC WSBVF WLLJM OXLUS EMCIA FPMMD WWCCL QKMKV FDAAM XIPYW YSWFW PLHXA WJMLL XUYEZ ZWKFC PMPAS TYCLL UEJYS EWUEW HZSBP AFITE IJMFO XXWJR AYCLG LLLYG PQSIT YHCIT PSXLT TLQSD DTMNE LIZQM OXFCY LUVAW BEEIO XVHLC WUCSL EYQAV SGDTB JIHMF DMOXL USEGA RAUEC MJVSY YSBPA WPPTT LFWQD YWPWM FNYWJ IUHLW TPINL FDVLZ WMCFW MCLHP HBYIV HFDQR RSVZW AVIZN OYIKI JIETV VQYHT PJLVS GCTND EDYSE UVVXX YLWAW DFLNT SEVYS NBHAQ FPDWS GYHTP JZMVH LVVHF WBEEI FKGFZ YPJIL LPECW QGWZE AZIUW LOMZM JISEC HRMHT POHKF YZEGJ EJCAD VVGXI DPOYE ZWRYQ KRWJW TIIRG XPDIL PWLDL EAGWJ DFALL LYWWM KELCN CMYYL WLQCU EEMXC ILLLL ZQARV GQSNQ OAELT QEHPS IEOMN RGFPM OUEJY SEIOX WFTMW TIZNO PEVLK YNLZA PDUNL TSEUY SEMRE EIEOM DSDFL YMLFV USPPS MLHFD VVMLM PFYLV GGJYI YIOMY LWAHW MFQMY XUYAD CZIZN EFJYI FCLEM YRGLP JEHPS YGLPV XWPTE KLPDI NRVPO UUSLN VVWVX PUHVG ZWLCZ YFODL EAMLU SEBBS VYEYQ VTWQC PGDED MTSTS EUIEO MKRSG POGSH WNLPX LVVHL OMAEL CRLGS LYCSP UHGWV ENMWW MMPSB ZMZNE FWIEV YVDIU IZQYZ QAEYC EDMCR ALPOV BHGCC PXLLL AYTZB HZWYL ZIIEU DPPAX SXPZM KMNHP ENVWS QYZQA TALND MKWJU XWIKK FCSNB HQFUX ZEHXS BEOMJ MLIYZ ASEWQ CPDLA GBHPQ CVWNY TBHHW VTCKZ IVYSD MPXAP TEKHI ZNSEQ DHWCW WIAIJ YSEAA MKCGD QOXSB EOMDS ZMDTA FPSHL CMOXJ OQOVH OFUMD QOXXI PRIAS GZJMJ VPWPP TZAIJ IEEVL WWLPH AARWA LSKUE JVZWA VRSHT XQOJG YRLBV SXXLS MDXSB EPDLM DYMZB KIEYP DMOKF CCZBP RGGYP MIHSB PHSUE TMDTE ZIZNX ZZMOF UMEVL VWZQT LFPWL TEVLR SNFZJ HKFCV WIAWS QENMW WMMPS BAEZN EYMYE HJLPU HGWVE TZLZW QZSOU MFITE ALYIL PSBYY XLPOV BINCE NMSPG WPSBF FFYVL BUIWV OLPUS ANNLZ LLLLF QWUSK XYFWM RWYMO IOWWM DPVRE WQZYB HLLXY LMZMU LPIMA EZYET PDEKU HEQKI ECLWK LLKCS ENVCL CWLOL PWBEE CVFSX PRVLP DUSNV LLOSE TZBGW MDVVH FWBEQ WAWWN YZQAE JNPYM WIUHL WMLVX UYZVV MLCOP XEIYH TSAPL HUQZB YEHML PDPXU YWWWJ IZNQZ NSEZY MYWKI LCDTD KEZYS EIOXV YXTIS GWBOY IRRSV LQWFF TIWPP ARAGT SNVIY UEZWM HSBPH BHLLX PWILZ WLPHZ LHJUS RVPLK OASBB SEIEO VHLYH TGQSI FIPXW ZVGZQ QWSPW QZZBL FGNOP ZHIHJ LPPAE ZNEFW KILHT ZXLAF YSHVL ZWYGC MZIJB DLKZM ZNAPS LLWLP SEUMS FAIMA SFXWF WDVGN ZYLSY GWPSA PLLHZ OMZWW LAYMO ALOME VBSUW LVVHF SYGLP VXLIY OVHWA MLMPZ EUUYZ GSIJC EYMRV GQZEL LQAUW NMOXK LTQBH WLHPX MNRSL CLTHM UHLYQ MWLWP AABWW BEZBK IFLFE MDOFU MDAPA KYSEP AMOJT SAUSA NLWMY WJIYJ IYXLO ZMIUA GHVJL HIJFL DIDXS BHWIL ZWLZE BVRWL LNOUM CUEEQ AYGVL VTHXG NOPZH TWLAE WUWSQ OYIKR ABPMB HLLFW LBMID XLSMO XSBEO MAELM ENMWW MMPSB KPABN LAHIJ YSEMT MLZZE VBSEU PWJHV WXTDV VGSNY PXZIZ NDPON YKMNT BZMJY ENIYE ZWPNQ VZLUS EBJEX YSEMA MHMPO TSELU VFMOX ZNTHA RRAFZ YLUYG ZDRVP KFIWP JZXUY ADCZI ZNQZP JVSYD LVVMK MPCXW SXIWZ WAEWL PHALW SVLEI KEFXE LPAKF CELBZ WAMJW IUEJI QPTWQ SMLYL HIVCG ZZWSL MEDMB UWLOP ABJWL PSVPX JUXPJ VXKYX LRKIL WPAAB WWQEL PAPSY GPZAS FXTOM DXMVC ZVFEJ NYTBY EEZZO VHXUY ADCZI ZNQZA JMJNP XWPFW BEYML ALYMY WPXSF PCZVG XIPPZ NIVBR TPHHW QZSAZ MKSWL VHWWC ETZVL LOLJB PWJYG TVBIZ NSEQD XMIOP SJIZW JCWAW KCSWM AEZWF PVUMW WYPQJ WJYEF XTSUH TPUTE JAZCX LXSOO LZNEE ICQBB SHICO ILFGN OPUPE DWOYI UMLLL XALQS DQZMT EFYSE VPWLH PXCJS VSETB UIVCJ EQSEM KSRQO KFCJC ZHGKU HEKLT KODPP AWAHX ZZMWH YCOVH EKHTX MJRSX YPBAE FCCZV FEJNY TBYEE BETED IAPCP BUMEI CQALX GH"
-string = string.replace(" ","")[::-1]
-print(string[-1])
+#Editable toggles and shit
+string = "JGSBOJPPRKXGOEVGEKFCGGHHMTQKDAODHTEUUTCPCWONFAZLJZBXSSWTUGXWSPBQUWZCSXODBEWQXANQCEEKJYUQXLIPQKZZFCGEYJFXSERSOTQUDGQTBRYAOEHJOUSTHKMSMPZGWWOEGHYJTPQWBWFISEELJZBVRATXSCXKJXOEDAWPZANWDZBUDJVNHKXYUSSXSYFYSTOUJAVGBKNPHJYVJHWNVXPNIUYFVYRGBKULBFSFHEVGMGSPSNOEFYHUSFWZZXOVEPTKXAORHJOWONFAZLJZBRBGDPGUSEOZKHEDMJWOWWSDSFSFUSSEYJFXSERSOTQUSNFMFQUWOOCYXLIPIUOJTYSGNJFNCIXAATBIDZFGWIOFFCSESHIPFUZGMJONZZBMSVSUOLHWBWBYRVRWLPMUMJVNWCVJPWSKWUIZCUSFHLDNKAOESZDEPMMFSULDCROFJYUHYJQCOEDADLZCZHMTQCDAPYOPNUPYGKNWSTBIRSOOZKXYPQGRKUFDOPNHVYQVESUTCPSLTNFWMABWHJKLDLDKDSMTNCDAPYPGCLBYRCBVJKSFLWGZFGOFDCMRDAPYWOQWUEWPQUMZGGBLPLQNOSSPLGMMUTCPZDBY"
+ReverseString = False # me when ciphertext was reversed :(
+keyLength = 6
+decipherData = {
+    "Ready" : True,
+    "AutoSolve" : True,
+    "recommendShift" : "chi"
+}
+decryptionReady = True
+AutoICData = {
+    "DoAutoIC" : False,
+    "StartKey" : 2,
+    "MaxKey" : 15
+}
+
+string = string.replace(" ","")
+if ReverseString:
+    string = string[::-1]
+
 RED = "\033[91m"
 BLUE = "\033[94m"
 RESET = "\033[0m"
 
 print(f"String length: {len(string)}")
+
 def seperators(string: str,keyLength: int) -> list:
     newArray = ["" for i in range(keyLength)]
 
@@ -32,45 +50,131 @@ def shift(text: str,s: int) -> str:
             result += chr((ord(char) + s - 97) % 26 + 97)
 
     return result
+def recommendedShift(args: dict, mode = "chi")-> int:
+    match mode:
+        case "frequency":
+            return recommendedShiftFrequencyAnalysis(args["string"],args["info"])
+        case "chi":
+            return recommendedShiftChiSquared(args["string"],args["info"])
+def recommendedShiftChiSquared(string: str, info = False) -> int:
+    minChi = [10**10,0]
+    allChis = []
+    for i in range(26):
+        chi = chiSquared(shift(string,i))
+
+        if chi<minChi[0]:
+            minChi = [chi,i]
+        allChis.append([chi,i])
+    
+    if info:
+        allChis=sorted(allChis, key=lambda thingy: thingy[0])
+        print(allChis[0])
+        print(allChis[1])
+        print(allChis[2])
+    return minChi[1]
+def recommendedShiftFrequencyAnalysis(string: str, info = False) -> int:
+    frequencies = Counter(string.lower())
+    frequenciesVer2 = sorted(list(frequencies.items()), key= lambda thingy: thingy[1], reverse= True)
+
+    maxDetails = ["",0]
+    potentialKeys = []
+    for letter, freq in frequencies.items():
+        if freq>maxDetails[1]:
+            maxDetails = [letter.upper(),freq]
+            potentialKeys.append([letter.upper(),freq])
+    
+    distance = ord("E") - ord(maxDetails[0])
+    if distance < 0: distance = 26+distance
+
+    if info:
+        print(frequenciesVer2[0])
+        print(frequenciesVer2[1])
+        print(frequenciesVer2[2])
+        print(frequenciesVer2[3])
+
+    return distance
+def chiSquared(text: str) -> int: #im pretty sure this is a version of standard deviation :sob, adds up the square of each letters occurance subtracted from its expected occurance and divides by expected occurance
+    english_letter_frequencies = {
+        'E': 0.1270,
+        'T': 0.0906,
+        'A': 0.0817,
+        'O': 0.0751,
+        'I': 0.0697,
+        'N': 0.0675,
+        'S': 0.0633,
+        'H': 0.0609,
+        'R': 0.0599,
+        'D': 0.0425,
+        'L': 0.0403,
+        'C': 0.0278,
+        'U': 0.0276,
+        'M': 0.0241,
+        'W': 0.0236,
+        'F': 0.0223,
+        'G': 0.0202,
+        'Y': 0.0197,
+        'P': 0.0193,
+        'B': 0.0149,
+        'V': 0.0098,
+        'K': 0.0077,
+        'J': 0.0015,
+        'X': 0.0015,
+        'Q': 0.0010, # Note: Often rounded from 0.00095
+        'Z': 0.0007
+    }
+    freqs = Counter(text)
+    length = len(text)
+
+    total = 0
+    for letter, freq in freqs.items():
+        total +=((freq-(english_letter_frequencies[letter.upper()]*length))**2)/english_letter_frequencies[letter.upper()]
+    return total
 def ic(self):
     freqs = Counter(self)
     length = len(self)
 
     ioc = sum([value*(value-1) for value in freqs.values()])/(length*(length-1))
     return ioc
-keyLength = 7
+
 seperatedText = seperators(string,keyLength)
-for i in range(2,20):
-    continue
-    seperatedText = seperators(string,i)
-    print(f"Key: {i}")
-    seperatedText[0] = shift(seperatedText[0],0).lower() #X most common
-    seperatedText[1] = shift(seperatedText[1],0).lower() #K most common
-    seperatedText.append("hi")
-    #seperatedText[2] = shift(seperatedText[2],0).lower() #E most common
-    print(f"IC No1: {round(ic(seperatedText[0]),8)}, IC No2 : {round(ic(seperatedText[1]),8)}, IC No3 : {round(ic(seperatedText[2]),8)}")
 
-seperatedText[0] = shift(seperatedText[0],6).lower() #Y most common 6
-seperatedText[1] = shift(seperatedText[1],8).lower() #W most common 8 
-seperatedText[2] = shift(seperatedText[2],22).upper() #E & I most common
-seperatedText[3] = shift(seperatedText[3],19).upper() #L H A most common
-seperatedText[4] = shift(seperatedText[4],18).lower() #M most common
-seperatedText[5] = shift(seperatedText[5],15).upper() #P and E most common 
-seperatedText[6] = shift(seperatedText[6],15).lower() #P most common
+if AutoICData["DoAutoIC"]:
+    for i in range(AutoICData["StartKey"],AutoICData["MaxKey"]):
+        seperatedText = seperators(string,i)
+        print(f"Key: {i}")
+        seperatedText[0] = shift(seperatedText[0],0).lower()
+        seperatedText[1] = shift(seperatedText[1],0).lower()
+        seperatedText.append("hi")
+        chiSquared(seperatedText[0])
+        print(f"IC No1: {round(ic(seperatedText[0]),8)}, IC No2 : {round(ic(seperatedText[1]),8)}, IC No3 : {round(ic(seperatedText[2]),8)}")
 
-print(seperatedText[6])
-print(ic(seperatedText[6]))
+if decryptionReady:
+    seperatedText = seperators(string,keyLength)
+    for i,block in enumerate(seperatedText):
+        args = {
+            "string" : block,
+            "info" : True
+        }
+        if not decipherData["AutoSolve"]:
+            RecommendedShift = recommendedShift(args, decipherData["recommendShift"])
+            shiftNum = (input(f"Shift value for block {i} (Recommended shift: {RecommendedShift} via frequency analysis): ")) or 0
+        else:
+            shiftNum = recommendedShift(args, decipherData["recommendShift"])
+        if shiftNum:
+            seperatedText[i] = shift(block,int(shiftNum)).lower()
+
 newString = ""
-for i in range(len(string)):
-    if (i%keyLength)==0: 
-        print(newString)
-        newString = ""
-    character = seperatedText[i%keyLength][i//keyLength]
-    if character.isupper():
-        newString += RED + character + RESET
-    else:
-        newString += BLUE + character + RESET
-print(newString)
+if decipherData["Ready"]:
+    for i in range(len(string)):
+        if (i%keyLength)==0: 
+            print(newString)
+            newString = ""
+        character = seperatedText[i%keyLength][i//keyLength]
+        if character.isupper():
+            newString += RED + character + RESET
+        else:
+            newString += BLUE + character + RESET
+    print(newString)
 """
 new = [firstPart,secondPart,thirdPart,fourthPart,fifthPart,sixthPart]
 newString = ""
