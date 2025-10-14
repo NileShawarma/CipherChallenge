@@ -60,10 +60,11 @@ def recommendedShiftChiSquared(string: str, info = False) -> int:
 
             if chi<minChi[0]:
                 minChi = [chi,[j,i]]
-            allChis.append([chi,[i,j]])
+            allChis.append([chi,[j,i]])
     
     if info:
         allChis=sorted(allChis, key=lambda thingy: thingy[0])
+        print("Chi level, and likely keys:")
         print(allChis[0])
         print(allChis[1])
         print(allChis[2])
