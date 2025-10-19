@@ -1,7 +1,18 @@
 from collections import Counter
+import os 
+import sys
+
+script_dir = os.path.dirname(__file__)
+modulesPath = os.path.join(script_dir,"..","..","Test","Modules")
+sys.path.append(modulesPath)
+
+from cipherTools import Affineshift,recommendedShiftChiSquared # type: ignore
 
 #Editable toggles and shit
-string = """FRWXT KFKWB VDXGL BMKNL MMATM RHNKC HNKGX RPTLN GXOXG MYNET GWAHI XRHNP BEEGH MFBGW FRWBK XVMGX LLBGP KBMBG ZMHRH NHGRH NKTKK BOTEB GGXPR HKDBT IIKXV BTMXM ATMRH NFTRG XXWTE BMMEX MBFXM HLXMR HNKHP GIETG LBGFH MBHGU NMMAB GZLTK XFHOB GZLHF XPATM YTLMX KMATG BXGOB LTZXW PAXGB YBKLM TIIKH TVAXW FKUTU UTZXP BMAFR IKHIH LTEBY XTKMA TMBGM AXLXW TGZXK HNLMB FXLBM BLGXV XLLTK RMHKX TVMMH XOXGM LPBMA LIXXW BYPXT KXMHA TOXTG RAHIX HYLAT IBGZH NKWXL MBGRP BMAEN VDBMB LGHMM HHETM XMHXF UTKDH GHNKO XGMNK XBNGW XKLMT GWMAT MRHNK LVAXW NEXBL GHMRX MYBGT EBLXW LHVTG BBFIE HKXRH NMHVH GLBWX KFHOB GZYHK PTKWR HNKOB LBMMH PTLAB GZMHG MAXKX TKXIX HIEXA XKXHY VHGLX JNXGV XPAHT KXXTZ XKMHF XXMPB MARHN TGWPA HFBZA MUXIX KLNTW XWURR HNMHC HBGPB MANLB YMAXL TVKBY BVXHY LHFTG RZHHW FXGTG WPHFX GBLGH MMHUX PTLMX WMAXG PXPBE EGXXW MAXBK LNIIH KMRHN ATOXT EKXTW RLAHP GTKXF TKDTU EXLDB EEBGX QIHLB GZBGC NLMBV XTGWI XKLNT WBGZM AXPXT EMARM HPHKD PBMAR HNMHT WWKXL LBMHG RHNKL BWXHY MAXTM ETGMB VAXKX BGMAX NGBMX WLMTM XLPXT KXWXL IXKTM XERBG GXXWH YRHNK TWOHV TVRBY PXTKX MHVHG LHEBW TMXMA XZTBG LPHGB GHNKF HLMNG VBOBE PTKPB MAFRO XKRUX LMPBL AXLZK XGOBE EXFWH WZX"""
+string = """
+PZ ORFE XERSQDMMR, D PNHK FYVMVXDHR UVE LAFEMRH, AR DH F XVVO PFS, INK LFS IR DEFHLDIMR, FSO KEFQRM ERFMMZ OVRH SVK HNDK ADP. D ERFO ADH MRKKRE KV ZVN TDKA HVPR LVSLRES (KAFSJ ZVN UVE HRSODSX PR F LVYZ), HRRDSX KAFK DK ORPVSHKEFKRH F MVTSRHH DS ADH HYDEKH, INK D LFS FHHNER ZVN KAFK AR DSKRSOH VSMZ KAR IRHK UVE VNE RSORFQVNE. DK KVVJ KAR LVPIDSRO RUUVEKH VU PZHRMU FSO MVEO OREIZ KV LVSQDSLR ADP VU KAR EDXAKSRHH VU VNE YMFS, INK TADMR AR DH UNMMZ LVPPDKKRO KV VNE LFNHR, AR DH SVK RSKDERMZ FK RFHR TDKA VNE PRKAVOH. D AFQR LVSKDSNRO KV HVMDLDK HNYYVEK UVE ZVNE YEVYVHFM VS KADH HDOR VU KAR FKMFSKDL, FSO D FP LVSUDORSK KAFK PZ VTS HPFMM LVSKEDINKDVS LFS YMFZ FS DPYVEKFSK YFEK DS DKH HNLLRHH. D KENHK KAFK ZVNE XEVNY ERPFDSH LVSUDORSK KAFK DK LFS ORMDQRE VS DKH YEVPDHR. TDKA KAR HNYYVEK VU KAR IEDKDHA FSO FPREDLFS XVQRESPRSKH D KADSJ TR LVNMO INDMO HVPRKADSX RSKDERMZ SRT FSO RWKERPRMZ YVTREUNM, AVTRQRE KAR KENR YVKRSKDFM LFS VSMZ IR PRK DU TR LFS RSHNER KVKFM HRLERLZ, FSO D TDMM AFQR KV ERMZ VS ZVN KV YREHNFOR LAFEMRH SVK KV HYRFJ VU VNE ORHDXSH TDKA FSZVSR VNKHDOR VU VNE LDELMR. UVE ADH VTS YFEK, LAFEMRH DH LADRUMZ DSKRERHKRO DS KAR HNLLRHH VU ADH KVNE, FSO TADMR AR TDMM YMFZ FS DPYVEKFSK EVMR DS YREHNFODSX DSQRHKVEH KV GVDS VNE HLARPR FSO YVMDKDLDFSH KV HNYYVEK DK, DK DH DPYVEKFSK KAFK AR DH FMHV FIMR KV RSGVZ KAR UENDKH VU ADH ERFODSX YREUVEPFSLRH. AR DSQRHKH PNLA VU ADPHRMU DS KAVHR ERFODSXH FSO DH DSLMDSRO KV VQREKDER ADPHRMU. D KENHK KAFK ZVN FSO ZVNE UEDRSOH TDMM VUURE ADP KAR HNYYVEK KAFK D TVNMO VUURE DU D LVNMO IR KARER TDKA ADP. TDKAVNK KAFK HNYYVEK D URFE KAFK AR TDMM AFQR SV RSREXZ MRUK KV YEVPVKR VNE YEVGRLK. ZVNE UEDRSO, LAFEMRH IFIIFXR
+"""
+
 ReverseString = False # me when ciphertext was reversed :(
 decipherData = {
     "Ready" : True,
@@ -10,11 +21,10 @@ decipherData = {
 }
 decryptionReady = True
 
-string = string.replace(" ","")
 result = ""
 
 for char in string:
-    if char.isalpha():
+    if char.isalpha() or char == " ":
         result+=char
 string = result
 
@@ -27,49 +37,12 @@ RESET = "\033[0m"
 
 print(f"String length: {len(string)}")
 
-
-def Affineshift(text: str,key: list) -> str:
-    result = ""
-    multi = key[0]
-    shift = key[1]
-    # traverse text
-    for i in range(len(text)):
-        char = text[i]
-
-        # Encrypt uppercase characters
-        if (char.isupper()):
-            result += chr((((ord(char)-65)*multi)+(shift))%26+65)
-        # Encrypt lowercase characters
-        else:
-            result += chr( ( ( (ord(char)-97) *multi) +shift) % 26 + 97)
-
-    return result
 def recommendedShift(args: dict, mode = "chi")-> list:
     match mode:
         case "frequency":
             return recommendedShiftFrequencyAnalysis(args["string"],args["info"])
         case "chi":
             return recommendedShiftChiSquared(args["string"],args["info"])
-def recommendedShiftChiSquared(string: str, info = False) -> int:
-    minChi = [10**10,0]
-    allChis = []
-    possibleMultis = [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25]
-    for j in possibleMultis:
-        for i in range(26):
-            chi = chiSquared(Affineshift(string,[j,i]))
-
-            if chi<minChi[0]:
-                minChi = [chi,[j,i]]
-            allChis.append([chi,[j,i]])
-    
-    if info:
-        allChis=sorted(allChis, key=lambda thingy: thingy[0])
-        print("Chi level, and likely keys:")
-        print(allChis[0])
-        print(allChis[1])
-        print(allChis[2])
-
-    return minChi[1]
 def recommendedShiftFrequencyAnalysis(string: str, info = False) -> int:
     frequencies = Counter(string.lower())
     frequenciesVer2 = sorted(list(frequencies.items()), key= lambda thingy: thingy[1], reverse= True)
@@ -91,49 +64,6 @@ def recommendedShiftFrequencyAnalysis(string: str, info = False) -> int:
         print(frequenciesVer2[3])
 
     return distance
-def chiSquared(text: str) -> int: #im pretty sure this is a version of standard deviation :sob, adds up the square of each letters occurance subtracted from its expected occurance and divides by expected occurance
-    english_letter_frequencies = {
-        'E': 0.1270,
-        'T': 0.0906,
-        'A': 0.0817,
-        'O': 0.0751,
-        'I': 0.0697,
-        'N': 0.0675,
-        'S': 0.0633,
-        'H': 0.0609,
-        'R': 0.0599,
-        'D': 0.0425,
-        'L': 0.0403,
-        'C': 0.0278,
-        'U': 0.0276,
-        'M': 0.0241,
-        'W': 0.0236,
-        'F': 0.0223,
-        'G': 0.0202,
-        'Y': 0.0197,
-        'P': 0.0193,
-        'B': 0.0149,
-        'V': 0.0098,
-        'K': 0.0077,
-        'J': 0.0015,
-        'X': 0.0015,
-        'Q': 0.0010, # Note: Often rounded from 0.00095
-        'Z': 0.0007
-    }
-    freqs = Counter(text)
-    length = len(text)
-
-    total = 0
-    for letter, freq in freqs.items():
-        total +=((freq-(english_letter_frequencies[letter.upper()]*length))**2)/english_letter_frequencies[letter.upper()]
-    return total
-def ic(self):
-    freqs = Counter(self)
-    length = len(self)
-
-    ioc = sum([value*(value-1) for value in freqs.values()])/(length*(length-1))
-    return ioc
-
 
 if decryptionReady:
     for i,block in enumerate([string]):

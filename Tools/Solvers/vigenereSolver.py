@@ -1,4 +1,12 @@
 from collections import Counter
+import os 
+import sys
+
+script_dir = os.path.dirname(__file__)
+modulesPath = os.path.join(script_dir,"..","..","Test","Modules")
+sys.path.append(modulesPath)
+
+from cipherTools import Affineshift,recommendedShiftChiSquared,ic,chiSquared,recommendedShiftFrequencyAnalysis # type: ignore
 
 #Editable toggles and shit
 string = """
@@ -10,7 +18,7 @@ decipherData = {
     "Ready" : True,
     "AutoSolve" : True,
     "recommendShift" : "chi",
-    "AffineOrCaesar": "Caesar" #when this is affine its basically quagmire II
+    "AffineOrCaesar": "Affine" #when this is affine its basically quagmire II
 }
 decryptionReady = True
 AutoICData = {
@@ -34,8 +42,6 @@ RESET = "\033[0m"
 
 print(f"String length: {len(string)}")
 
-#i love chi squared so fucking much, LIKE DUDE I DONT HAVE TO READ EACH CIPHER TEXT TO CHECK
-#wait if i add crib checking with it.... good god
 def seperators(string: str,keyLength: int) -> list:
     newArray = ["" for i in range(keyLength)]
 
@@ -43,133 +49,14 @@ def seperators(string: str,keyLength: int) -> list:
         newArray[index] = string[index::keyLength]
 
     return newArray
-def Affineshift(text: str,key: list) -> str:
-    result = ""
-    multi = key[0]
-    shift = key[1]
-    # traverse text
-    for i in range(len(text)):
-        char = text[i]
-
-        # Encrypt uppercase characters
-        if (char.isupper()):
-            result += chr((((ord(char)-65)*multi)+(shift))%26+65)
-        # Encrypt lowercase characters
-        else:
-            result += chr( ( ( (ord(char)-97) *multi) +shift) % 26 + 97)
-
-    return result
 def shift(text: str,s: int) -> str:
-    result = ""
-
-    # traverse text
-    for i in range(len(text)):
-        char = text[i]
-
-        # Encrypt uppercase characters
-        if (char.isupper()):
-            result += chr((ord(char) + s-65) % 26 + 65)
-
-        # Encrypt lowercase characters
-        else:
-            result += chr((ord(char) + s - 97) % 26 + 97)
-
-    return result
+    return Affineshift(text,[1,s])
 def recommendedShift(args: dict, mode = "chi")-> int:
     match mode:
         case "frequency":
             return recommendedShiftFrequencyAnalysis(args["string"],args["info"])
         case "chi":
             return recommendedShiftChiSquared(args["string"],args["info"])
-def recommendedShiftChiSquared(string: str, info = False) -> int:
-    minChi = [10**10,0]
-    allChis = []
-    possibleMultis = [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25]
-
-    if args["CaesarOrAffine"] == "Caesar":
-        for i in range(26):
-            chi = chiSquared(shift(string,i))
-
-            if chi<minChi[0]:
-                minChi = [chi,i]
-            allChis.append([chi,i])
-    else:
-        for j in possibleMultis:
-            for i in range(26):
-                chi = chiSquared(Affineshift(string,[j,i]))
-
-                if chi<minChi[0]:
-                    minChi = [chi,[j,i]]
-                allChis.append([chi,[j,i]])
-    if info:
-        allChis=sorted(allChis, key=lambda thingy: thingy[0])
-        print(allChis[0])
-        print(allChis[1])
-        print(allChis[2])
-    return minChi[1]
-def recommendedShiftFrequencyAnalysis(string: str, info = False) -> int:
-    frequencies = Counter(string.lower())
-    frequenciesVer2 = sorted(list(frequencies.items()), key= lambda thingy: thingy[1], reverse= True)
-
-    maxDetails = ["",0]
-    potentialKeys = []
-    for letter, freq in frequencies.items():
-        if freq>maxDetails[1]:
-            maxDetails = [letter.upper(),freq]
-            potentialKeys.append([letter.upper(),freq])
-    
-    distance = ord("E") - ord(maxDetails[0])
-    if distance < 0: distance = 26+distance
-
-    if info:
-        print(frequenciesVer2[0])
-        print(frequenciesVer2[1])
-        print(frequenciesVer2[2])
-        print(frequenciesVer2[3])
-
-    return distance
-def chiSquared(text: str) -> int: #im pretty sure this is a version of standard deviation :sob, adds up the square of each letters occurance subtracted from its expected occurance and divides by expected occurance
-    english_letter_frequencies = {
-        'E': 0.1270,
-        'T': 0.0906,
-        'A': 0.0817,
-        'O': 0.0751,
-        'I': 0.0697,
-        'N': 0.0675,
-        'S': 0.0633,
-        'H': 0.0609,
-        'R': 0.0599,
-        'D': 0.0425,
-        'L': 0.0403,
-        'C': 0.0278,
-        'U': 0.0276,
-        'M': 0.0241,
-        'W': 0.0236,
-        'F': 0.0223,
-        'G': 0.0202,
-        'Y': 0.0197,
-        'P': 0.0193,
-        'B': 0.0149,
-        'V': 0.0098,
-        'K': 0.0077,
-        'J': 0.0015,
-        'X': 0.0015,
-        'Q': 0.0010,
-        'Z': 0.0007
-    }
-    freqs = Counter(text)
-    length = len(text)
-
-    total = 0
-    for letter, freq in freqs.items():
-        total +=((freq-(english_letter_frequencies[letter.upper()]*length))**2)/english_letter_frequencies[letter.upper()]
-    return total
-def ic(self):
-    freqs = Counter(self)
-    length = len(self)
-
-    ioc = sum([value*(value-1) for value in freqs.values()])/(length*(length-1))
-    return ioc
 
 seperatedText = seperators(string,keyLength)
 
@@ -242,17 +129,3 @@ if decipherData["Ready"]:
         else:
             newString += BLUE + character + RESET
     print(newString)
-"""
-new = [firstPart,secondPart,thirdPart,fourthPart,fifthPart,sixthPart]
-newString = ""
-for i in range(len(string)):
-    print(i//6)
-    try:
-        if new[i%6][i//6].isupper():
-            newString+="_"
-        else: newString+=new[i%6][i//6]
-    except: pass
-print(newString)
-while True:
-    pass
-"""

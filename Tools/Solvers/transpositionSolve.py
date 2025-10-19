@@ -1,13 +1,24 @@
 from itertools import permutations
+import os 
+import sys
 
-string = "ANROH AESTM VEYES HAEKS TKCEH VRTEA EEHRK NLNND EBMSS OBOGN HAIOR GLASU SAFAU AIUAA ONAEG EEPTM DFLTE HESOE ARFME EOTAE LSAPA ATLIK ENHAI SETIZ AAEAH EOBOT TNTDR TLTFA SVNED SRNWT ASETO DLLNY DELOS ELLTP IKEHW LOOTC TTAEY ITSRR HANER MAIAS EDDAI ADEAI MBTLO RUAUA NUHNT MTTMO TGWUS LTSOF YASED UALSO ODESY SNUNA GDAPO DAEEI SLGEC KBUCR HUIEG OYIRI PEMNR DLTTN EPHEE FIASE MTAEO IILEE GATNR OEEIM YTCDN UETEH EROIE NNSIR YTTLE TUSTG GCMSU TCTAH EETIA IESDA HENSG VOERS NHSTI ORTDB HETSA EEBHE RTLEY NSGEE HEREH TOETH EDTTE EICEE STATT ELIFW OIEPB MEUEJ IDOHT TIAED VMHUS SDTSN OEIKA SCDTI LVCTC EASCV EDNNI EIOTU TLRTO SEDWA HOURE EITIA HEHAF CTBIT SYMNO TREOF DTELA ONUOA KMSCI DESHT STISE RSTSU BGELH XEIYH EUMIT NTHAL ACOYX ODIAT AEHLD AAMFL EOGSA NATRJ IAMVN IMGAT TRIAN ICNWH SBUIT YLCTE IEEDW BESOF HOESD AIOSC SFINO MUENT KETUF NOILF ASVNB ESSFT OSESV NAWOR IPOFH AEBHE TTLVD NOEBT BLUAK ECECF FADMS AONIE ACOER ODEHE EDNIH VHYNE PVAHO METTL AWICA ITWHE GEEHA OTATE EHLER EHILC HAGMR MVREE TIGYO ETFAR OEEIY OSIDT THADT OSOOU TIASI OHNUT SIRMA NRCRT RYRCI MIDDE EICUH CTDIW NDHNT LYAEB HUOPR WNOME EATTL EEAEK NNDOG USEAF IDETS ABAOK EANHH HVAND HSCGT HMTAD LTEIR OFAEE HHEFE MAOEA LLCOD AAEEH EIODT EMMAE MDPEH NSETW HAISN ILRIK BHAIF AOHOK NTSEI CNAAL POHHS NCREE EMTHD EYGTR FEIBO OHGSE COILT EHENT IKGGN SHTIS EITTR TIKAG CELNT RNREE AIRCO UNMSG EERHO VNRLN IKNNT SHNEM UIWSS WBOTI PIFEI TESEE OLETT THAAN CENOD IARLV ETNNR UTCOD TAAAS TBPEA ROTIA NAYAA MTEWN ITTHO PNLDR OTHEW OTNLJ ICOMN YMBIU YENIA WTHUN NREEO HLDFW GCTWE TATID OKOTT EEHUF IWFHR CSTEF TIISD AFIAR DAAEH AEEOO UDASU SNTSA RDHIY NMEOP RENRC EUCSF ONAHL BCTEE ECHEI ETTGE SHAEB HHOMT HETTC TTBMS HMRDA ALIDT MNIEO IAOST ELESH LBPNT OLNEM RIEBO TNIWO TRMHR PUUGW TCUTN ETTHG NIAVE HINII"
+script_dir = os.path.dirname(__file__)
+modulesPath = os.path.join(script_dir,"..","..","Test","Modules")
+sys.path.append(modulesPath)
+
+import cipherTools # type: ignore
+
+string = """
+DEYRB UGZWR VEFMY PEOAR GTDHX MGWHR RRQRL GSZVE VVIES UZRTU OEHVR SSLLQ VBCYW YHVRL OEUGV TOTGX DVQWU SBLJN HELFQ ARJLL BIIGK JAEGM QGUTG NQAQC ENRYY VOAIK PNJGC YDRPW VFSOV QOTGK KIAWE TPNIC ZKRZI XUSAW NYEUK XEZWA NKIUE OMQHA TZWWR WTSGN IGZGC ZWYFZ HDNHM GZKRZ GINLO EOGJL RUNZD RTGKD RYABL ROMHE AVDAE CIFOY HKDVN FKTUK QFNZA IJEGW MRBSJ NHELF QANKV NRUNG NKOIL KVFHL FKDRT COEGI EKVFG NMJUX LULXJ SZLNZ MEXKP CDGRV IYGNM YOMHK KSHKL OSGTR DGNUU MNKVI NSVBZ YUIHA UQAAP OBHYA SVGFB LOBHZ UNEHE SHGNM ZEUKL VJTTB QSJOO EEKBU KNAEJ MAYNA EJMAY CEIHI VLOEE UZZGE BVKIW MZTJG VGKJT FFSAX BSRZP RATIE LXVSA EQGVQ ZUAUG EAWET EGTNE KRFIW RUYEP EDVGI OEIYF AVNNH QGROK VKIQG LSOEX VRONX XTPAW HRXAV TZHVV IYSAE EIPNV ZEIVE AQDAL CMNXK IEOYP CAHRO AUZGR XDXRF VWYOD RYONK KICWY GNSWA SASVX QVFIE ERQAG TDZKE CHLNG UPNBK AGDWF LVTUK NHRRC FOPRU AIBTQ NSTOK VYEWO OJZPR ECICO JRWSA OUCGA YDZVQ NFALV TOVZZ OKUCG GMIAJ KUGVT VUWRN LNOAB VLCEV ATYSP NJNIG OYIEL XVKBS CKKGZ NETXV NLVRF ICEOU SZWCJ ASLBB MEIUM VKMFF HTHXI YVXOK HGGAC EAKAF VKRYD TFLOE EKERC OLCIM ASSLL AVYUI KKKIF WJRRZ WSZNE ZAXUD LGVUV GNGTC HEIWZ TUKYH KYTZR RBXOO JCMQK GLNLX UEPDN YIAJS AIBEZ ZHSNI TRBKR ZGINO LSUUC YJREK WLRUV LYKKG UXDVD PJAAH GNMZZ NEIXW FAHNZ GNVGI AEEIC JLTGE ZHZNL VVWVX AHREN RKRBV WVNQL DNTLF NKHRV WHYNE FZMQG CAPZI ZANHG SIXKZ HVWLV WCEFL IYRUU KLXVK HCHTV VTMPC DRNFK IGNQA QOCRQ LRDW
+"""
 cribs = ["dynamix","citadelle","pds", "syndicate","gravitational", "waves","jamelia","martin","seismological","phenomenon","neutron", "star"]
+
 #Editable toggles and shit
 ReverseString = False # me when ciphertext was reversed :(
 decipherData = {
     "Ready" : True,
     "AutoSolve" : True,
-    "recommendShift" : "chi"
+    "recommendShift" : "chi" #how we try to guesstimate the key
 }
 decryptionReady = True
 
@@ -32,52 +43,56 @@ string = "".join(string.split(" "))[::1]
 print(len(string))
 input()
 
+#converts cipher text into nth long chunks which we can acc manipulate, im not sure why i decided to use 2d arrays for this but im not touching this function its too delicate
 def chunkBreaker(string: list, length: int, readMode = "row") -> list:
     numChunks = len(string)//length
+
     match readMode:
         case "row":
             chunks=[]
-            for index in range(0,len(string)-length+1,length):
+            for index in range(0,len(string)-length+1,length): #plus one cus arrays 0 based and range doesnt acc hit the max value
                 chunks.append([string[index:index+length]])
             return chunks
+
         case "column":
-            chunks = [[""] for j in range(numChunks)]#None for i in range((length))] for j in range(numChunks)]
+            chunks = [[""] for j in range(numChunks)]
 
             for index in range(0,len(string)):
                 listNumber = index%(numChunks) 
-                chunks[listNumber][0] += string[index]            
+                chunks[listNumber][0] += string[index]
+                        
             return chunks
 
 def swapValues(array: list,key: list) -> list:
-    newArray = [None for i in array[0]]
+    newArray = [None for i in array[0]] #Makes an empty copy of the given ciphered array
 
     for index,value in enumerate(key):
-        newArray[index] = array[0][value]
-
+        newArray[index] = array[0][value] #Each value of the new array is given the nth key value of the ciphered array
     return newArray
 
 def all_full_permutations(lst):#chatgpt'd code here ibr rest is clean
     return [list(p) for p in permutations(lst, len(lst))]
 
-while True:
-    testString = "HTEUQ IKCBO RWFNO JXUPM SVOET RHLEA YZDGO X".replace(" ","") #Decryption Key is [1,0,2]
-    chunkLength = 5
+if __name__ == "__main__":
+    while True:
+        testString = "HTEUQ IKCBO RWFNO JXUPM SVOET RHLEA YZDGO X".replace(" ","") #Decryption Key is [1,0,2]
+        chunkLength = 5
 
-    chunkified = chunkBreaker(string,chunkLength,"column")
-    print(chunkified)
+        chunkified = chunkBreaker(string,chunkLength,"column")
+        print(chunkified)
 
-    input(chunkified[-1])
-    print(all_full_permutations([i for i in range(chunkLength)]))
-    for key in all_full_permutations([i for i in range(chunkLength)]):
-        
-        decipheredText = ""
-        for chunk in chunkified:
-            decipheredText += "".join(swapValues(chunk,key))
-        print("\n")
-        print(decipheredText)
-        print("\n")
+        input(chunkified[-1])
+        print(all_full_permutations([i for i in range(chunkLength)]))
+        for key in all_full_permutations([i for i in range(chunkLength)]):
+            
+            decipheredText = ""
+            for chunk in chunkified:
+                decipheredText += "".join(swapValues(chunk,key))
+            print("\n")
+            print(decipheredText)
+            print("\n")
 
-        for i in cribs:
-            if i.upper() in decipheredText:
-                input()
-    chunkLength = int(input("End of decryption: "))
+            for i in cribs:
+                if i.upper() in decipheredText:
+                    input()
+        chunkLength = int(input("End of decryption: "))
