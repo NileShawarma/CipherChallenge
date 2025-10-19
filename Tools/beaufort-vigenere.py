@@ -1,4 +1,13 @@
 from collections import Counter
+import os 
+import sys
+
+script_dir = os.path.dirname(__file__)
+modulesPath = os.path.join(script_dir,"..","Test","Modules")
+sys.path.append(modulesPath)
+
+from cipherTools import Affineshift,recommendedShiftChiSquared,inverseText,ic,chiSquared,recommendedShiftFrequencyAnalysis # type: ignore
+
 #FEATURES
 """
 CipherText : Auto converted to upper, stripped of punctuation numbers spaces and newlines etc, auto inversed as it is a beaufort cipher
@@ -15,11 +24,11 @@ AutoIC: Prints out the IC's of the first three colummns for a key of size n, loo
 
 #Editable toggles and shit
 string = """
-Se vsv Rusyrrx fayyx ute Emaz ud Mpjmmwr ec lke kwrl mi hbi nqeqopzvsyi uh Nengepjii Ugxbhkz Giljjm Ymwxbrjivgz Npzhasx Zjrwgz cnk Uievm Purnnrsti Cmetjginxk, Ahjakbtr mrmyy "Hgw woxlnrk mm jtj zitwtn ip Yrqgcmfyckf aq ay ravh qyejnf. Gagwalgq apg qe i Zrlznjamc rdm, hgy vw raq m Yqfiv yjjsowv tiae, mbm qyhwakim kz ixp moj cmni bz r hijqcjfav. Ew xrq pahyn npx ar mhaxpz ci n pemmaa ud onp hz qeia xjw ipjhw. Ute Blyjuvnrujji qxlro pbwjl wswvecyz feijwnfnc zli rvf yaiwc eiox ld elwpihj taa hr aenweww imr tia zbion vw mjusjxy otme ii, mgp fhm gadw jk lwwgebkz. Ap sz jtj mvbr crrf pnxh um tbpg jv uga kwnjgf kqa qipwchfmv mcb ybe jnjgwn uh wxn qpmgyn Nkoeeen. Ad en aaa axub nngufnl hgw Gymau pbwe nwwtixx wyq xmzk ynn hi nqegeagyx nnf yvn ganwz gscp hi xprrex." Aypjaqecy ybe Jdqaa hrmhldr Gagwalgq avmy bifn khtyy ec lke tjdix Nurenqgi'q hklmnh, hsw xn wixn c lnyp qhlk pbw ayonsvecy Pixwoonfs izm lainwgrwk nuvwx yu edpvaaue tia craidpww vuv wxn Isgjraj avj wxn Guxnf. Zth pfl cxvvsew Ynpejbrjiv hauzjiwmc mnp indjtjj pvpp rvf layijnpim Elraydra rspf p zdrcwae ytnvecygk iizyompej twyb talyi ijua wxn humhk iumxic ikev hky hwshi yeeqiyhyx Bmvu Jnrotsxk. Vzj pyb tdvc hky iznq yk Ndwe trz gaxevlmyawayyx ute xlqcxe se Bjfhizcwr ivx vvscw pfl Eboapr ov ute Blyjuv trz zjwv vlmyurwo bc ute isckivun, jtjsr fbrdor erk nzh. Igywpuxa mcyjx i vllxrv hd Lmbw, bsdwgaihjon nnf mesdqp ynlhnsv jleyb. Ptn ksqhb kiecpej dx op hibl qm muw jk utarjlb qk xslvhasvg, okgx ino oad.
-""".upper()
+DEYRB UGZWR VEFMY PEOAR GTDHX MGWHR RRQRL GSZVE VVIES UZRTU OEHVR SSLLQ VBCYW YHVRL OEUGV TOTGX DVQWU SBLJN HELFQ ARJLL BIIGK JAEGM QGUTG NQAQC ENRYY VOAIK PNJGC YDRPW VFSOV QOTGK KIAWE TPNIC ZKRZI XUSAW NYEUK XEZWA NKIUE OMQHA TZWWR WTSGN IGZGC ZWYFZ HDNHM GZKRZ GINLO EOGJL RUNZD RTGKD RYABL ROMHE AVDAE CIFOY HKDVN FKTUK QFNZA IJEGW MRBSJ NHELF QANKV NRUNG NKOIL KVFHL FKDRT COEGI EKVFG NMJUX LULXJ SZLNZ MEXKP CDGRV IYGNM YOMHK KSHKL OSGTR DGNUU MNKVI NSVBZ YUIHA UQAAP OBHYA SVGFB LOBHZ UNEHE SHGNM ZEUKL VJTTB QSJOO EEKBU KNAEJ MAYNA EJMAY CEIHI VLOEE UZZGE BVKIW MZTJG VGKJT FFSAX BSRZP RATIE LXVSA EQGVQ ZUAUG EAWET EGTNE KRFIW RUYEP EDVGI OEIYF AVNNH QGROK VKIQG LSOEX VRONX XTPAW HRXAV TZHVV IYSAE EIPNV ZEIVE AQDAL CMNXK IEOYP CAHRO AUZGR XDXRF VWYOD RYONK KICWY GNSWA SASVX QVFIE ERQAG TDZKE CHLNG UPNBK AGDWF LVTUK NHRRC FOPRU AIBTQ NSTOK VYEWO OJZPR ECICO JRWSA OUCGA YDZVQ NFALV TOVZZ OKUCG GMIAJ KUGVT VUWRN LNOAB VLCEV ATYSP NJNIG OYIEL XVKBS CKKGZ NETXV NLVRF ICEOU SZWCJ ASLBB MEIUM VKMFF HTHXI YVXOK HGGAC EAKAF VKRYD TFLOE EKERC OLCIM ASSLL AVYUI KKKIF WJRRZ WSZNE ZAXUD LGVUV GNGTC HEIWZ TUKYH KYTZR RBXOO JCMQK GLNLX UEPDN YIAJS AIBEZ ZHSNI TRBKR ZGINO LSUUC YJREK WLRUV LYKKG UXDVD PJAAH GNMZZ NEIXW FAHNZ GNVGI AEEIC JLTGE ZHZNL VVWVX AHREN RKRBV WVNQL DNTLF NKHRV WHYNE FZMQG CAPZI ZANHG SIXKZ HVWLV WCEFL IYRUU KLXVK HCHTV VTMPC DRNFK IGNQA QOCRQ LRDW
+"""
 
 ReverseString = False # me when ciphertext was reversed :(
-keyLength = 13
+keyLength = 14
 decipherData = {
     "Ready" : True,
     "AutoSolve" : True,
@@ -54,115 +63,14 @@ def seperators(string: str,keyLength: int) -> list:
         newArray[index] = string[index::keyLength]
 
     return newArray
-def inverseText(string: str) -> str:
-    result = ""
-    string = string.upper()
-    for char in string:
-        keyCode = 90-(ord(char)-65)
-        result += chr(keyCode)
-    return result
 def shift(text: str,s: int) -> str:
-    result = ""
-
-    # traverse text
-    for i in range(len(text)):
-        char = text[i]
-
-        # Encrypt uppercase characters
-        if (char.isupper()):
-            result += chr((ord(char) + s-65) % 26 + 65)
-
-        # Encrypt lowercase characters
-        else:
-            result += chr((ord(char) + s - 97) % 26 + 97)
-
-    return result
-def recommendedShift(args: dict, mode = "chi")-> int:
+    return Affineshift(text,[1,s])
+def recommendedShift(args: dict, mode = "chi")-> list:
     match mode:
         case "frequency":
             return recommendedShiftFrequencyAnalysis(args["string"],args["info"])
         case "chi":
             return recommendedShiftChiSquared(args["string"],args["info"])
-def recommendedShiftChiSquared(string: str, info = False) -> int:
-    minChi = [10**10,0]
-    allChis = []
-    for i in range(26):
-        chi = chiSquared(shift(string,i))
-
-        if chi<minChi[0]:
-            minChi = [chi,i]
-        allChis.append([chi,i])
-    
-    if info:
-        allChis=sorted(allChis, key=lambda thingy: thingy[0])
-        print(allChis[0])
-        print(allChis[1])
-        print(allChis[2])
-    return minChi[1]
-def recommendedShiftFrequencyAnalysis(string: str, info = False) -> int:
-    frequencies = Counter(string.lower())
-    frequenciesVer2 = sorted(list(frequencies.items()), key= lambda thingy: thingy[1], reverse= True)
-
-    maxDetails = ["",0]
-    potentialKeys = []
-    for letter, freq in frequencies.items():
-        if freq>maxDetails[1]:
-            maxDetails = [letter.upper(),freq]
-            potentialKeys.append([letter.upper(),freq])
-    
-    distance = ord("E") - ord(maxDetails[0])
-    if distance < 0: distance = 26+distance
-
-    if info:
-        print(frequenciesVer2[0])
-        print(frequenciesVer2[1])
-        print(frequenciesVer2[2])
-        print(frequenciesVer2[3])
-
-    return distance
-def chiSquared(text: str) -> int: #im pretty sure this is a version of standard deviation :sob, adds up the square of each letters occurance subtracted from its expected occurance and divides by expected occurance
-    english_letter_frequencies = {
-        'E': 0.1270,
-        'T': 0.0906,
-        'A': 0.0817,
-        'O': 0.0751,
-        'I': 0.0697,
-        'N': 0.0675,
-        'S': 0.0633,
-        'H': 0.0609,
-        'R': 0.0599,
-        'D': 0.0425,
-        'L': 0.0403,
-        'C': 0.0278,
-        'U': 0.0276,
-        'M': 0.0241,
-        'W': 0.0236,
-        'F': 0.0223,
-        'G': 0.0202,
-        'Y': 0.0197,
-        'P': 0.0193,
-        'B': 0.0149,
-        'V': 0.0098,
-        'K': 0.0077,
-        'J': 0.0015,
-        'X': 0.0015,
-        'Q': 0.0010, # Note: Often rounded from 0.00095
-        'Z': 0.0007
-    }
-    freqs = Counter(text)
-    length = len(text)
-
-    total = 0
-    for letter, freq in freqs.items():
-        total +=((freq-(english_letter_frequencies[letter.upper()]*length))**2)/english_letter_frequencies[letter.upper()]
-    return total
-def ic(self):
-    freqs = Counter(self)
-    length = len(self)
-
-    ioc = sum([value*(value-1) for value in freqs.values()])/(length*(length-1))
-    return ioc
-
 string = inverseText(string)
 seperatedText = seperators(string,keyLength)
 print(string)
@@ -187,9 +95,9 @@ if decryptionReady:
             RecommendedShift = recommendedShift(args, decipherData["recommendShift"])
             shiftNum = (input(f"Shift value for block {i} (Recommended shift: {RecommendedShift} via frequency analysis): ")) or 0
         else:
-            shiftNum = recommendedShift(args, decipherData["recommendShift"])
+            shiftNum = recommendedShift(args, decipherData["recommendShift"])[1]
         if shiftNum or shiftNum==0:
-            seperatedText[i] = shift(block,int(shiftNum)).lower()
+            seperatedText[i] = shift(block,shiftNum).lower()
             decryptionKey+=str(shiftNum-1)+"|"
         else:
             decryptionKey+="-"+"|"
