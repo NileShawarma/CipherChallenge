@@ -1,0 +1,3 @@
+Row transposition cipher
+Period - 5
+Key - [2,3,4,0,1]
