@@ -57,7 +57,8 @@ def recommendedShift(args: dict, mode = "chi")-> int:
             return recommendedShiftFrequencyAnalysis(args["string"],args["info"])
         case "chi":
             return recommendedShiftChiSquared(args["string"],args["info"])
-
+print(seperators("hello",2))
+input()
 seperatedText = seperators(string,keyLength)
 
 if AutoICData["DoAutoIC"]:

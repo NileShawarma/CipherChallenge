@@ -15,40 +15,7 @@ MAGENTA = "\033[1;35m"
 GREEN = "\033[1;32m"
 RESET = "\033[0m"
 
-from cipherTools import chiSquared # type: ignore
-
-class trigram():
-    def __init__(self):
-        self.trigrams = {}
-        self.totalVal = 0
-
-        trigramPath = os.path.join(script_dir,"..","..","Test","Data","trigrams.txt")
-        with open(trigramPath, "r") as file:
-            for line in file:
-                trigramData = line.split(" ")
-                self.trigrams[trigramData[0]] = int(trigramData[1])
-                self.totalVal += int(trigramData[1])
-            
-        for key in list(self.trigrams.keys()):
-            probability = self.trigrams[key]/self.totalVal
-            self.trigrams[key] = math.log10(probability)
-
-        self.baseScore = math.log10(0.01/self.totalVal)
-        print(f"{GREEN}Loaded {len(self.trigrams)} trigrams.{RESET}")
-        
-    def score(self, text):
-        
-        finalScore = 0
-
-        for index in range(len(text)-3+1):
-            trigram = text[index:index+3].upper()
-            
-            if trigram in self.trigrams:
-                finalScore += self.trigrams[trigram]
-            else:
-                finalScore += self.baseScore
-        
-        return finalScore
+from cipherTools import chiSquared, ngrams # type: ignore
 
 def shuffleKey(currentKey: str) -> str:
     tempKey = list(currentKey)
@@ -77,18 +44,34 @@ def decrypt(cipherText: str, key: str) -> str:
 
 #Editable toggles and shit
 string = """
-PZ ORFE XERSQDMMR, D PNHK FYVMVXDHR UVE LAFEMRH, AR DH F XVVO PFS, INK LFS IR DEFHLDIMR, FSO KEFQRM ERFMMZ OVRH SVK HNDK ADP. D ERFO ADH MRKKRE KV ZVN TDKA HVPR LVSLRES (KAFSJ ZVN UVE HRSODSX PR F LVYZ), HRRDSX KAFK DK ORPVSHKEFKRH F MVTSRHH DS ADH HYDEKH, INK D LFS FHHNER ZVN KAFK AR DSKRSOH VSMZ KAR IRHK UVE VNE RSORFQVNE. DK KVVJ KAR LVPIDSRO RUUVEKH VU PZHRMU FSO MVEO OREIZ KV LVSQDSLR ADP VU KAR EDXAKSRHH VU VNE YMFS, INK TADMR AR DH UNMMZ LVPPDKKRO KV VNE LFNHR, AR DH SVK RSKDERMZ FK RFHR TDKA VNE PRKAVOH. D AFQR LVSKDSNRO KV HVMDLDK HNYYVEK UVE ZVNE YEVYVHFM VS KADH HDOR VU KAR FKMFSKDL, FSO D FP LVSUDORSK KAFK PZ VTS HPFMM LVSKEDINKDVS LFS YMFZ FS DPYVEKFSK YFEK DS DKH HNLLRHH. D KENHK KAFK ZVNE XEVNY ERPFDSH LVSUDORSK KAFK DK LFS ORMDQRE VS DKH YEVPDHR. TDKA KAR HNYYVEK VU KAR IEDKDHA FSO FPREDLFS XVQRESPRSKH D KADSJ TR LVNMO INDMO HVPRKADSX RSKDERMZ SRT FSO RWKERPRMZ YVTREUNM, AVTRQRE KAR KENR YVKRSKDFM LFS VSMZ IR PRK DU TR LFS RSHNER KVKFM HRLERLZ, FSO D TDMM AFQR KV ERMZ VS ZVN KV YREHNFOR LAFEMRH SVK KV HYRFJ VU VNE ORHDXSH TDKA FSZVSR VNKHDOR VU VNE LDELMR. UVE ADH VTS YFEK, LAFEMRH DH LADRUMZ DSKRERHKRO DS KAR HNLLRHH VU ADH KVNE, FSO TADMR AR TDMM YMFZ FS DPYVEKFSK EVMR DS YREHNFODSX DSQRHKVEH KV GVDS VNE HLARPR FSO YVMDKDLDFSH KV HNYYVEK DK, DK DH DPYVEKFSK KAFK AR DH FMHV FIMR KV RSGVZ KAR UENDKH VU ADH ERFODSX YREUVEPFSLRH. AR DSQRHKH PNLA VU ADPHRMU DS KAVHR ERFODSXH FSO DH DSLMDSRO KV VQREKDER ADPHRMU. D KENHK KAFK ZVN FSO ZVNE UEDRSOH TDMM VUURE ADP KAR HNYYVEK KAFK D TVNMO VUURE DU D LVNMO IR KARER TDKA ADP. TDKAVNK KAFK HNYYVEK D URFE KAFK AR TDMM AFQR SV RSREXZ MRUK KV YEVPVKR VNE YEVGRLK. ZVNE UEDRSO, LAFEMRH IFIIFXR
+FW MHLEBGY REHLH, B UHP HQ NBLPQ JEOHPOM HGM QZOG HEHLFOM QI LOROBTO WISL EOQQOL. ZHJJW IN RISLPO QI DGIU QZHQ WIS ZHTO HLLBTOM PHNOEW BG GOU WILD HGM QZOG HEHLFOM HQ WISL HRRISGQ IN QZO ASLGOM GIQO. B UHP PQSGY AW H MHLD JHGY IN COHEISPW, NOHLBGY QZHQ BQ FBYZQ AO H EOQQLO M\’HFISL. RISEM BQ AO QZO LOHPIG QZHQ ZO MBM GIQ HEEIU FO QI HRRIFJHGW ZBF QI GOU WILD? B HF JLISM QI PHW QZHQ B MBPFBPPOM QZBP UBRDOM QZISYZQ HP SGUILQZW IN SP AIQZ HGM UHP SGPSLJLBPOM QZISYZ, B FSPQ RIGNOPP, H EBQQEO LOEBOTOM QI LOHM WISL OVJEHGHQBIG IN QZO BMOGQBQW IN QZO POGMOL. QZO FWPQOLW LOFHBGP HP QI UZHQ ASPBGOPP QZO YOGOLHE ZHM UBQZ FW AOEITOM, HGM UZW ZO ZHP RZIPOG QI RIFFSGBRHQO UBQZ RZHLEOP BG RIMO. B PSJJIPO BQ FBYZQ AO RIGGORQOM UBQZ RZHLEOP’P FOOQBGY UBQZ FL AHAAHYO HGM QZO JLBFO FBGBPQOL IG QZO MHW AONILO ZO EONQ. QZO MIIL QI QZO PQSMW UHP REIPOM, ASQ TIBROP UOLO REOHLEW LHBPOM MSLBGY QZO MBPRSPPBIG HGM RZHLEOP UHP BG H QOLLBAEO FIIM HNQOLUHLMP. ZO UISEM IGEW PHW QZHQ ZO UHP “QII IEM QI AO BGTIETOM BG PDSEMSYYOLW!” BN GIQ, QZOG B PSJJIPO QZHQ QZO EOQQOL FBYZQ ZHTO RIGROLGOM QZO HRQBTBQBOP IN QZO YZIPQ RESA. BP QZHQ QII NHGRBNSE? UZBEO QZO PIRBOQW BP ZHLMEW PORLOQ, PIFO JLHRQBRHE FOG HLO MBPFBPPBTO IN HG BGQOLOPQ BG PJBLBQSHEBPF, HGM B RHG BFHYBGO QZHQ H FHG UZI ZHP FHMO ZBP LOJSQHQBIG HP HG OGYBGOOL FHW NOOE QZHQ PSRZ HG HPPIRBHQBIG UISEM MHFHYO ZBP PQHGMBGY. BP QZOLO HGW UHW QZHQ WIS RISEM HPROLQHBG QZO RIGQOGQP IN QZBP RILLOPJIGMOGRO, IL QZO GHQSLO IN QZO LOEHQBIGPZBJ AOQUOOG QZOF? B HF FIPQ RSLBISP QI EOHLG. WISLP HNNORQBIGHQOEW, OEEOG
+
 """.upper()
 
-trigam_inator = trigram()
 
 ReverseString = False # me when ciphertext was reversed :(
 decipherData = {
     "RemoveSpaces": False, #sm more readable when u do
     "Ready" : True,
     "AutoSolve" : True,
-    "superfun" : True
+    "superfun" : True,
+    "ngramToUse" : 0
 }
+statement = ""
+match decipherData["ngramToUse"]:
+    case 2:
+        statement = "Utilising bi-grams."
+        gam_inator = ngrams().bigrams
+    case 3:
+        statement = "Utilising tri-grams."
+        ngram_inator = ngrams().trigrams
+    case 4:
+        statement = "Utilising quad-grams."
+        ngram_inator = ngrams().quadgrams
+    case 0:
+        statement = "Utilising all data."
+        ngram_inator = ngrams()
+
 decryptionReady = True
 
 result = ""
@@ -106,6 +89,7 @@ print(f"{GREEN}String length: {len(string)}{RESET}")
 
 
 if __name__ == "__main__":
+    print(f"\n\033[1m{RED}{statement}{RESET}")
     bestKeys = []
     for i in range(5):
         print(f"{BLUE}")
@@ -119,7 +103,7 @@ if __name__ == "__main__":
             current_key+=str(random.choice(alphabet))
             alphabet.remove(current_key[-1])
 
-        current_score = trigam_inator.score(decrypt(string, current_key))
+        current_score = ngram_inator.score(decrypt(string, current_key))
 
         best_key = current_key
         best_score = current_score
@@ -130,7 +114,7 @@ if __name__ == "__main__":
 
         for iteration in range(max_iterations):
             new_key = shuffleKey(current_key)
-            new_score = trigam_inator.score(decrypt(string, new_key))
+            new_score = ngram_inator.score(decrypt(string, new_key))
             
             #calc score diff
             diff = new_score - current_score
